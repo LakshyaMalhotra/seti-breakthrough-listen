@@ -35,12 +35,12 @@ if __name__ == "__main__":
         )
         for i in range(config.FOLDS)
     ]
-    loss_ckpts = [
-        os.path.join(
-            config.MODEL_DIR, config.MODEL_NAME + f"_fold{i}_best_loss.pth"
-        )
-        for i in range(config.FOLDS)
-    ]
+    # loss_ckpts = [
+    #     os.path.join(
+    #         config.MODEL_DIR, config.MODEL_NAME + f"_fold{i}_best_loss.pth"
+    #     )
+    #     for i in range(config.FOLDS)
+    # ]
 
     # instantiate the model and load the checkpoint
     model = seti_model.SETIModel(model_name=config.MODEL_NAME, pretrained=True)
