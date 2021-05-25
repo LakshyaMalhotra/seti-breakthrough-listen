@@ -1,0 +1,213 @@
+------------------------------
+       Training fold: 0       
+------------------------------
+Epoch: 1, 	avg train loss: 0.1887, 	avg validation loss: 0.0829
+Epoch: 1, 	ROC-AUC score: 0.9640, 	time elapsed: 481.08931374549866
+Epoch: 1, 	Save Best Score: 0.9640 Model
+Epoch: 1, 	Save Best Loss: 0.0829 Model
+Epoch: 2, 	avg train loss: 0.1517, 	avg validation loss: 0.0691
+Epoch: 2, 	ROC-AUC score: 0.9742, 	time elapsed: 484.84134244918823
+Epoch: 2, 	Save Best Score: 0.9742 Model
+Epoch: 2, 	Save Best Loss: 0.0691 Model
+Epoch: 3, 	avg train loss: 0.1450, 	avg validation loss: 0.0636
+Epoch: 3, 	ROC-AUC score: 0.9779, 	time elapsed: 485.1429228782654
+Epoch: 3, 	Save Best Score: 0.9779 Model
+Epoch: 3, 	Save Best Loss: 0.0636 Model
+Epoch: 4, 	avg train loss: 0.1387, 	avg validation loss: 0.0649
+Epoch: 4, 	ROC-AUC score: 0.9751, 	time elapsed: 485.15069246292114
+Epoch: 5, 	avg train loss: 0.1333, 	avg validation loss: 0.0542
+Epoch: 5, 	ROC-AUC score: 0.9792, 	time elapsed: 485.2539849281311
+Epoch: 5, 	Save Best Score: 0.9792 Model
+Epoch: 5, 	Save Best Loss: 0.0542 Model
+------------------------------
+       Fold: 0 result        
+------------------------------
+Score: 0.9792
+------------------------------
+       Training fold: 1       
+------------------------------
+Epoch: 1, 	avg train loss: 0.1899, 	avg validation loss: 0.0830
+Epoch: 1, 	ROC-AUC score: 0.9654, 	time elapsed: 485.4651155471802
+Epoch: 1, 	Save Best Score: 0.9654 Model
+Epoch: 1, 	Save Best Loss: 0.0830 Model
+Epoch: 2, 	avg train loss: 0.1510, 	avg validation loss: 0.0790
+Epoch: 2, 	ROC-AUC score: 0.9670, 	time elapsed: 484.95433592796326
+Epoch: 2, 	Save Best Score: 0.9670 Model
+Epoch: 2, 	Save Best Loss: 0.0790 Model
+Epoch: 3, 	avg train loss: 0.1397, 	avg validation loss: 0.0820
+Epoch: 3, 	ROC-AUC score: 0.9677, 	time elapsed: 484.87416338920593
+Epoch: 3, 	Save Best Score: 0.9677 Model
+Epoch: 4, 	avg train loss: 0.1352, 	avg validation loss: 0.0680
+Epoch: 4, 	ROC-AUC score: 0.9677, 	time elapsed: 484.91375494003296
+Epoch: 4, 	Save Best Loss: 0.0680 Model
+Epoch: 5, 	avg train loss: 0.1354, 	avg validation loss: 0.0706
+Epoch: 5, 	ROC-AUC score: 0.9663, 	time elapsed: 484.847047328949
+------------------------------
+       Fold: 1 result        
+------------------------------
+Score: 0.9677
+------------------------------
+       Training fold: 2       
+------------------------------
+Epoch: 1, 	avg train loss: 0.1899, 	avg validation loss: 0.0934
+Epoch: 1, 	ROC-AUC score: 0.9566, 	time elapsed: 484.92355942726135
+Epoch: 1, 	Save Best Score: 0.9566 Model
+Epoch: 1, 	Save Best Loss: 0.0934 Model
+Epoch: 2, 	avg train loss: 0.1484, 	avg validation loss: 0.0819
+Epoch: 2, 	ROC-AUC score: 0.9618, 	time elapsed: 485.36205315589905
+Epoch: 2, 	Save Best Score: 0.9618 Model
+Epoch: 2, 	Save Best Loss: 0.0819 Model
+Epoch: 3, 	avg train loss: 0.1405, 	avg validation loss: 0.0712
+Epoch: 3, 	ROC-AUC score: 0.9688, 	time elapsed: 485.14802384376526
+Epoch: 3, 	Save Best Score: 0.9688 Model
+Epoch: 3, 	Save Best Loss: 0.0712 Model
+Epoch: 4, 	avg train loss: 0.1360, 	avg validation loss: 0.0746
+Epoch: 4, 	ROC-AUC score: 0.9671, 	time elapsed: 485.0823218822479
+Epoch: 5, 	avg train loss: 0.1309, 	avg validation loss: 0.0720
+Epoch: 5, 	ROC-AUC score: 0.9668, 	time elapsed: 485.29691886901855
+------------------------------
+       Fold: 2 result        
+------------------------------
+Score: 0.9688
+------------------------------
+       Training fold: 3       
+------------------------------
+Epoch: 1, 	avg train loss: 0.1902, 	avg validation loss: 0.1066
+Epoch: 1, 	ROC-AUC score: 0.9567, 	time elapsed: 484.84733963012695
+Epoch: 1, 	Save Best Score: 0.9567 Model
+Epoch: 1, 	Save Best Loss: 0.1066 Model
+Epoch: 2, 	avg train loss: 0.1519, 	avg validation loss: 0.0864
+Epoch: 2, 	ROC-AUC score: 0.9621, 	time elapsed: 484.7050619125366
+Epoch: 2, 	Save Best Score: 0.9621 Model
+Epoch: 2, 	Save Best Loss: 0.0864 Model
+Epoch: 3, 	avg train loss: 0.1442, 	avg validation loss: 0.0807
+Epoch: 3, 	ROC-AUC score: 0.9698, 	time elapsed: 484.9658498764038
+Epoch: 3, 	Save Best Score: 0.9698 Model
+Epoch: 3, 	Save Best Loss: 0.0807 Model
+Epoch: 4, 	avg train loss: 0.1377, 	avg validation loss: 0.0719
+Epoch: 4, 	ROC-AUC score: 0.9683, 	time elapsed: 485.2243151664734
+Epoch: 4, 	Save Best Loss: 0.0719 Model
+Epoch: 5, 	avg train loss: 0.1339, 	avg validation loss: 0.0705
+Epoch: 5, 	ROC-AUC score: 0.9707, 	time elapsed: 485.17228150367737
+Epoch: 5, 	Save Best Score: 0.9707 Model
+Epoch: 5, 	Save Best Loss: 0.0705 Model
+------------------------------
+       Fold: 3 result        
+------------------------------
+Score: 0.9707
+------------------------------
+       CV        
+------------------------------
+Score: 0.9711
+------------------------------
+       Training fold: 0       
+------------------------------
+------------------------------
+       Training fold: 0       
+------------------------------
+------------------------------
+       Training fold: 0       
+------------------------------
+------------------------------
+       Training fold: 0       
+------------------------------
+Epoch: 1, 	avg train loss: 0.1845, 	avg validation loss: 0.1930
+Epoch: 1, 	ROC-AUC score: 0.9641, 	time elapsed: 660.0464656352997
+Epoch: 1, 	Save Best Score: 0.9641 Model
+Epoch: 1, 	Save Best Loss: 0.1930 Model
+Epoch: 2, 	avg train loss: 0.1492, 	avg validation loss: 0.2457
+Epoch: 2, 	ROC-AUC score: 0.9703, 	time elapsed: 662.8025102615356
+Epoch: 2, 	Save Best Score: 0.9703 Model
+Epoch: 3, 	avg train loss: 0.1410, 	avg validation loss: 0.0628
+Epoch: 3, 	ROC-AUC score: 0.9742, 	time elapsed: 663.0490462779999
+Epoch: 3, 	Save Best Score: 0.9742 Model
+Epoch: 3, 	Save Best Loss: 0.0628 Model
+Epoch: 4, 	avg train loss: 0.1334, 	avg validation loss: 0.0601
+Epoch: 4, 	ROC-AUC score: 0.9770, 	time elapsed: 662.9258325099945
+Epoch: 4, 	Save Best Score: 0.9770 Model
+Epoch: 4, 	Save Best Loss: 0.0601 Model
+Epoch: 5, 	avg train loss: 0.1323, 	avg validation loss: 0.0566
+Epoch: 5, 	ROC-AUC score: 0.9777, 	time elapsed: 663.0719997882843
+Epoch: 5, 	Save Best Score: 0.9777 Model
+Epoch: 5, 	Save Best Loss: 0.0566 Model
+------------------------------
+       Fold: 0 result        
+------------------------------
+Score: 0.9777
+------------------------------
+       Training fold: 1       
+------------------------------
+Epoch: 1, 	avg train loss: 0.1863, 	avg validation loss: 0.1014
+Epoch: 1, 	ROC-AUC score: 0.9580, 	time elapsed: 663.1647255420685
+Epoch: 1, 	Save Best Score: 0.9580 Model
+Epoch: 1, 	Save Best Loss: 0.1014 Model
+Epoch: 2, 	avg train loss: 0.1494, 	avg validation loss: 0.0793
+Epoch: 2, 	ROC-AUC score: 0.9680, 	time elapsed: 663.1563844680786
+Epoch: 2, 	Save Best Score: 0.9680 Model
+Epoch: 2, 	Save Best Loss: 0.0793 Model
+Epoch: 3, 	avg train loss: 0.1384, 	avg validation loss: 0.0934
+Epoch: 3, 	ROC-AUC score: 0.9583, 	time elapsed: 662.9342510700226
+Epoch: 4, 	avg train loss: 0.1336, 	avg validation loss: 0.0817
+Epoch: 4, 	ROC-AUC score: 0.9637, 	time elapsed: 662.8516726493835
+Epoch: 5, 	avg train loss: 0.1293, 	avg validation loss: 0.0725
+Epoch: 5, 	ROC-AUC score: 0.9668, 	time elapsed: 663.1629893779755
+Epoch: 5, 	Save Best Loss: 0.0725 Model
+------------------------------
+       Fold: 1 result        
+------------------------------
+Score: 0.9680
+------------------------------
+       Training fold: 2       
+------------------------------
+Epoch: 1, 	avg train loss: 0.1849, 	avg validation loss: 0.0973
+Epoch: 1, 	ROC-AUC score: 0.9480, 	time elapsed: 663.2991263866425
+Epoch: 1, 	Save Best Score: 0.9480 Model
+Epoch: 1, 	Save Best Loss: 0.0973 Model
+Epoch: 2, 	avg train loss: 0.1471, 	avg validation loss: 0.0794
+Epoch: 2, 	ROC-AUC score: 0.9618, 	time elapsed: 663.0638008117676
+Epoch: 2, 	Save Best Score: 0.9618 Model
+Epoch: 2, 	Save Best Loss: 0.0794 Model
+Epoch: 3, 	avg train loss: 0.1404, 	avg validation loss: 0.0778
+Epoch: 3, 	ROC-AUC score: 0.9647, 	time elapsed: 662.4951045513153
+Epoch: 3, 	Save Best Score: 0.9647 Model
+Epoch: 3, 	Save Best Loss: 0.0778 Model
+Epoch: 4, 	avg train loss: 0.1317, 	avg validation loss: 0.0775
+Epoch: 4, 	ROC-AUC score: 0.9643, 	time elapsed: 663.0057322978973
+Epoch: 4, 	Save Best Loss: 0.0775 Model
+Epoch: 5, 	avg train loss: 0.1326, 	avg validation loss: 0.0688
+Epoch: 5, 	ROC-AUC score: 0.9689, 	time elapsed: 663.3147354125977
+Epoch: 5, 	Save Best Score: 0.9689 Model
+Epoch: 5, 	Save Best Loss: 0.0688 Model
+------------------------------
+       Fold: 2 result        
+------------------------------
+Score: 0.9689
+------------------------------
+       Training fold: 3       
+------------------------------
+Epoch: 1, 	avg train loss: 0.1864, 	avg validation loss: 0.1102
+Epoch: 1, 	ROC-AUC score: 0.9524, 	time elapsed: 663.5999562740326
+Epoch: 1, 	Save Best Score: 0.9524 Model
+Epoch: 1, 	Save Best Loss: 0.1102 Model
+Epoch: 2, 	avg train loss: 0.1484, 	avg validation loss: 0.0919
+Epoch: 2, 	ROC-AUC score: 0.9689, 	time elapsed: 664.0937850475311
+Epoch: 2, 	Save Best Score: 0.9689 Model
+Epoch: 2, 	Save Best Loss: 0.0919 Model
+Epoch: 3, 	avg train loss: 0.1354, 	avg validation loss: 0.0766
+Epoch: 3, 	ROC-AUC score: 0.9707, 	time elapsed: 663.5965213775635
+Epoch: 3, 	Save Best Score: 0.9707 Model
+Epoch: 3, 	Save Best Loss: 0.0766 Model
+Epoch: 4, 	avg train loss: 0.1336, 	avg validation loss: 0.0860
+Epoch: 4, 	ROC-AUC score: 0.9761, 	time elapsed: 663.7023520469666
+Epoch: 4, 	Save Best Score: 0.9761 Model
+Epoch: 5, 	avg train loss: 0.1310, 	avg validation loss: 0.0674
+Epoch: 5, 	ROC-AUC score: 0.9725, 	time elapsed: 663.8758978843689
+Epoch: 5, 	Save Best Loss: 0.0674 Model
+------------------------------
+       Fold: 3 result        
+------------------------------
+Score: 0.9761
+------------------------------
+       CV        
+------------------------------
+Score: 0.9719
