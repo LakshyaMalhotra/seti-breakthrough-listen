@@ -24,7 +24,7 @@ def time_since(since, percent):
 
 
 def init_logger(
-    log_file: str = os.path.join(OUTPUT_DIR, "train.log")
+    log_file: str = os.path.join(OUTPUT_DIR, "train_with_augmentations.log")
 ) -> logging.Logger:
     """Initiate the logger to log the progress into a file.
 

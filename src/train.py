@@ -33,11 +33,12 @@ def train_loop(df: pd.DataFrame, fold: int, desc: bool = False):
     valid_labels = valid_folds["target"].values
 
     # get the image augmentations
-    transforms = dataset.get_transforms()
+    train_transforms = dataset.get_train_transforms()
+    valid_transforms = dataset.get_valid_transforms()
 
     # create training and validation datasets
-    train_data = dataset.SETIDataset(train_folds, transform=transforms)
-    valid_data = dataset.SETIDataset(valid_folds, transform=transforms)
+    train_data = dataset.SETIDataset(train_folds, transform=train_transforms)
+    valid_data = dataset.SETIDataset(valid_folds, transform=valid_transforms)
 
     # training and validation dataloaders
     train_loader = torch.utils.data.DataLoader(

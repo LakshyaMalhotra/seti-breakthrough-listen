@@ -95,6 +95,7 @@ ipython_config.py
 #Pipfile.lock
 
 # data directories
+.vscode/
 data/
 models/
 *.csv

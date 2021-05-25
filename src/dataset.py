@@ -42,7 +42,33 @@ class SETIDataset(torch.utils.data.Dataset):
 
 
 # define the transforms
-def get_transforms():
+def get_train_transforms():
+    return A.Compose(
+        [
+            A.Resize(config.SIZE, config.SIZE),
+            A.OneOf([A.GaussNoise(), A.MultiplicativeNoise(p=0.1)], p=0.25),
+            A.OneOf(
+                [
+                    A.MedianBlur(blur_limit=3, p=0.1),
+                    A.Blur(blur_limit=3, p=0.1),
+                    A.GaussianBlur(blur_limit=3, p=0.1),
+                ],
+                p=0.15,
+            ),
+            A.OneOf(
+                [
+                    A.OpticalDistortion(p=0.3),
+                    A.GridDistortion(p=0.1),
+                ],
+                p=0.2,
+            ),
+            A.ElasticTransform(p=0.3),
+            ToTensorV2(),
+        ]
+    )
+
+
+def get_valid_transforms():
     return A.Compose([A.Resize(config.SIZE, config.SIZE), ToTensorV2()])
 
 
@@ -50,7 +76,7 @@ if __name__ == "__main__":
     import os
 
     df = pd.read_csv(os.path.join(config.OUTPUT_DIR, "train_folds.csv"))
-    transforms = get_transforms()
+    transforms = get_train_transforms()
     data = SETIDataset(df, transforms)
     image, label = data.__getitem__(0)
     print(image.size())
