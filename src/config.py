@@ -16,7 +16,7 @@ WEIGHT_DECAY = 1e-6
 EPOCHS = 5
 
 # name of the model
-MODEL_NAME = "efficientnet_b2"
+MODEL_NAME = "efficientnetv2_rw_s"
 
 # number of cross-validation folds
 FOLDS = 4

@@ -17,7 +17,7 @@ if __name__ == "__main__":
     )
 
     # define the transforms and create test dataset
-    transforms = dataset.get_transforms()
+    transforms = dataset.get_valid_transforms()
     test_ds = dataset.SETIDataset(test_df, transform=transforms)
 
     # test dataloader

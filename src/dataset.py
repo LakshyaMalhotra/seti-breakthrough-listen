@@ -51,7 +51,7 @@ def get_train_transforms():
                 [
                     A.MedianBlur(blur_limit=3, p=0.1),
                     A.Blur(blur_limit=3, p=0.1),
-                    A.GaussianBlur(blur_limit=3, p=0.1),
+                    A.GaussianBlur(blur_limit=3, sigma_limit=0.2, p=0.1),
                 ],
                 p=0.15,
             ),

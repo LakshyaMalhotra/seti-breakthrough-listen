@@ -136,13 +136,13 @@ def train_loop(df: pd.DataFrame, fold: int, desc: bool = False):
             LOGGER.info(
                 f"Epoch: {epoch+1}, \tSave Best Loss: {best_loss:.4f} Model"
             )
-            torch.save(
-                {"model": model.state_dict(), "preds": preds},
-                os.path.join(
-                    config.MODEL_DIR,
-                    f"{config.MODEL_NAME}_fold{fold}_best_loss.pth",
-                ),
-            )
+            # torch.save(
+            #     {"model": model.state_dict(), "preds": preds},
+            #     os.path.join(
+            #         config.MODEL_DIR,
+            #         f"{config.MODEL_NAME}_fold{fold}_best_loss.pth",
+            #     ),
+            # )
     # save the predictions in the valid dataframe
     valid_folds["preds"] = torch.load(
         os.path.join(
