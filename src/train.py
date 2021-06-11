@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 from sklearn import metrics
 
-import dataset, seti_model, utils, run, config
+import dataset, seti_model, utils, run, config, test_model
 
 
 LOGGER = utils.init_logger()
@@ -33,7 +33,7 @@ def train_loop(df: pd.DataFrame, fold: int, desc: bool = False):
     valid_labels = valid_folds["target"].values
 
     # get the image augmentations
-    train_transforms = dataset.get_train_transforms()
+    train_transforms = dataset.get_train_transforms_v2()
     valid_transforms = dataset.get_valid_transforms()
 
     # create training and validation datasets
@@ -60,6 +60,7 @@ def train_loop(df: pd.DataFrame, fold: int, desc: bool = False):
 
     # model
     model = seti_model.SETIModel(model_name=config.MODEL_NAME, pretrained=True)
+    # model = test_model.CNNModel()
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = model.to(device)
 

@@ -1,4 +1,5 @@
 from typing import Tuple
+from albumentations.augmentations.transforms import RandomBrightnessContrast
 import torch
 import numpy as np
 import pandas as pd
@@ -31,7 +32,7 @@ class SETIDataset(torch.utils.data.Dataset):
         image_path = self.df.loc[idx, "file_path"]
         image = np.load(image_path)
         image = image.astype(np.float32)
-        image = np.vstack(image).transpose((1, 0))
+        image = np.vstack(image)  # .transpose((1, 0))
         if self.transform:
             image = self.transform(image=image)["image"]
         else:
@@ -49,20 +50,34 @@ def get_train_transforms():
             A.OneOf([A.GaussNoise(), A.MultiplicativeNoise(p=0.1)], p=0.25),
             A.OneOf(
                 [
-                    A.MedianBlur(blur_limit=3, p=0.1),
-                    A.Blur(blur_limit=3, p=0.1),
-                    A.GaussianBlur(blur_limit=3, sigma_limit=0.2, p=0.1),
-                ],
-                p=0.15,
-            ),
-            A.OneOf(
-                [
                     A.OpticalDistortion(p=0.3),
                     A.GridDistortion(p=0.1),
                 ],
                 p=0.2,
             ),
             A.ElasticTransform(p=0.3),
+            ToTensorV2(),
+        ]
+    )
+
+
+def get_train_transforms_v2():
+    return A.Compose(
+        [
+            A.Resize(config.SIZE, config.SIZE),
+            A.OneOf(
+                [
+                    A.GaussNoise(var_limit=1.15),
+                    A.MultiplicativeNoise(multiplier=1.1),
+                ],
+                p=0.2,
+            ),
+            A.RandomBrightnessContrast(
+                contrast_limit=0.12, brightness_limit=0.12, p=0.2
+            ),
+            A.OpticalDistortion(distort_limit=0.07, shift_limit=0.07, p=0.25),
+            A.GaussianBlur(p=0.15),
+            A.RandomGridShuffle(grid=(4, 4), p=0.2),
             ToTensorV2(),
         ]
     )
