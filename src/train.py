@@ -14,6 +14,47 @@ import dataset, seti_model, utils, run, config, test_model
 LOGGER = utils.init_logger()
 
 
+def get_lr_scheduler(optimizer, scheduler_name):
+    """Get learning rate scheduler."""
+    if scheduler_name == "ReduceLROnPlateau":
+        scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+            optimizer,
+            mode="min",
+            factor=0.5,
+            patience=2,
+            verbose=True,
+            eps=1e-6,
+        )
+    elif scheduler_name == "CosineAnnealingLR":
+        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
+            optimizer, T_max=10, eta_min=0, verbose=False
+        )
+    elif scheduler_name == "CyclicLR":
+        scheduler = torch.optim.lr_scheduler.CyclicLR(
+            optimizer,
+            base_lr=1e-4,
+            max_lr=6e-4,
+            mode="triangular",
+            cycle_momentum=False,
+            verbose=False,
+        )
+    elif scheduler_name == "CyclicLR2":
+        scheduler = torch.optim.lr_scheduler.CyclicLR(
+            optimizer,
+            base_lr=1e-4,
+            max_lr=6e-4,
+            mode="triangular2",
+            cycle_momentum=False,
+            verbose=False,
+        )
+    else:
+        scheduler = torch.optim.lr_scheduler.ExponentialLR(
+            optimizer, gamma=0.5, verbose=True
+        )
+
+    return scheduler
+
+
 def train_loop(df: pd.DataFrame, fold: int, desc: bool = False):
     LOGGER.info("-" * 30)
     LOGGER.info(f"       Training fold: {fold}       ")
@@ -29,9 +70,6 @@ def train_loop(df: pd.DataFrame, fold: int, desc: bool = False):
 
     train_folds = df.loc[train_idx].reset_index(drop=True)
     valid_folds = df.loc[valid_idx].reset_index(drop=True)
-
-    train_labels = train_folds["traget"].values
-    positive_weights = np.mean(train_labels)
 
     valid_labels = valid_folds["target"].values
 
@@ -64,6 +102,8 @@ def train_loop(df: pd.DataFrame, fold: int, desc: bool = False):
     # model
     model = seti_model.SETIModel(model_name=config.MODEL_NAME, pretrained=True)
     # model = test_model.CNNModel()
+    LOGGER.info(f"Training with model: {config.MODEL_NAME}")
+
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = model.to(device)
 
@@ -74,7 +114,7 @@ def train_loop(df: pd.DataFrame, fold: int, desc: bool = False):
         seti_model.model_details(model, x)
 
     # optimizer
-    optimizer = torch.optim.Adam(
+    optimizer = torch.optim.AdamW(
         model.parameters(),
         lr=config.LEARNING_RATE,
         weight_decay=config.WEIGHT_DECAY,
@@ -82,12 +122,10 @@ def train_loop(df: pd.DataFrame, fold: int, desc: bool = False):
     )
 
     # learning rate scheduler
-    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-        optimizer, mode="min", factor=0.2, patience=3, verbose=True, eps=1e-6
-    )
+    scheduler = get_lr_scheduler(optimizer, scheduler_name=config.SCHEDULER)
 
     # define the loss function
-    criterion = nn.BCEWithLogitsLoss(pos_weight=positive_weights)
+    criterion = nn.BCEWithLogitsLoss()
 
     # define variables for ROC and loss
     best_score = 0
@@ -102,14 +140,29 @@ def train_loop(df: pd.DataFrame, fold: int, desc: bool = False):
     for epoch in range(config.EPOCHS):
         start_time = time.time()
 
-        # train
-        avg_loss = engine.train(train_loader, epoch)
+        if config.SCHEDULER in ["CosineAnnealingLR", "CyclicLR", "CyclicLR2"]:
+            # train
+            avg_loss = engine.train(
+                train_loader, epoch, scheduler=scheduler, print_every=100
+            )
 
-        # evaluate
-        avg_val_loss, preds = engine.evaluate(valid_loader)
+            # evaluate
+            avg_val_loss, preds = engine.evaluate(valid_loader, print_every=50)
+            scheduler = get_lr_scheduler(
+                optimizer, scheduler_name=config.SCHEDULER
+            )
+        else:
+            # train
+            avg_loss = engine.train(train_loader, epoch, print_every=100)
 
-        # step the scheduler
-        scheduler.step(avg_val_loss)
+            # evaluate
+            avg_val_loss, preds = engine.evaluate(valid_loader, print_every=50)
+
+            # step the scheduler
+            if config.SCHEDULER == "ReduceLROnPlateau":
+                scheduler.step(avg_val_loss)
+            else:
+                scheduler.step()
 
         # scoring
         roc_score = metrics.roc_auc_score(valid_labels, preds)
@@ -173,6 +226,7 @@ def main(df):
         LOGGER.info(f"       Fold: {fold} result        ")
         LOGGER.info("-" * 30)
         get_result(_oof_df)
+        break
     # CV result
     LOGGER.info("-" * 30)
     LOGGER.info(f"       CV        ")

@@ -10,13 +10,14 @@ NUM_WORKERS = 4
 
 # optimizer variables
 LEARNING_RATE = 3e-4
-WEIGHT_DECAY = 1e-6
+WEIGHT_DECAY = 5e-5
+SCHEDULER = "CosineAnnealingLR"
 
 # number of training rounds
-EPOCHS = 5
+EPOCHS = 4
 
 # name of the model
-MODEL_NAME = "efficientnetv2_rw_s"
+MODEL_NAME = "efficientnet_b1"
 # MODEL_NAME = "test_cnn_model"
 
 # number of cross-validation folds
