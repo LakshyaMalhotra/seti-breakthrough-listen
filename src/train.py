@@ -30,6 +30,9 @@ def train_loop(df: pd.DataFrame, fold: int, desc: bool = False):
     train_folds = df.loc[train_idx].reset_index(drop=True)
     valid_folds = df.loc[valid_idx].reset_index(drop=True)
 
+    train_labels = train_folds["traget"].values
+    positive_weights = np.mean(train_labels)
+
     valid_labels = valid_folds["target"].values
 
     # get the image augmentations
@@ -84,7 +87,7 @@ def train_loop(df: pd.DataFrame, fold: int, desc: bool = False):
     )
 
     # define the loss function
-    criterion = nn.BCEWithLogitsLoss()
+    criterion = nn.BCEWithLogitsLoss(pos_weight=positive_weights)
 
     # define variables for ROC and loss
     best_score = 0
