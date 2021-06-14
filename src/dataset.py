@@ -29,9 +29,9 @@ class SETIDataset(torch.utils.data.Dataset):
     ) -> Tuple[torch.FloatTensor, torch.LongTensor]:
         label = self.df.loc[idx, "target"]
         image_path = self.df.loc[idx, "file_path"]
-        image = np.load(image_path)
+        image = np.load(image_path)[[0, 2, 4]]
         image = image.astype(np.float32)
-        image = np.vstack(image)  # .transpose((1, 0))
+        image = np.vstack(image).transpose((1, 0))
         if self.transform:
             image = self.transform(image=image)["image"]
         else:
