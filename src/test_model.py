@@ -33,7 +33,7 @@ class CNNModel(nn.Module):
         x = self.relu(self.conv5(x))
         x = self.maxpool(x)
 
-        x = x.view(1, -1)
+        x = torch.flatten(x, 1)
 
         x = self.relu(self.dropout(self.fc1(x)))
 

@@ -17,6 +17,7 @@ EPOCHS = 5
 
 # name of the model
 MODEL_NAME = "efficientnetv2_rw_s"
+# MODEL_NAME = "test_cnn_model"
 
 # number of cross-validation folds
 FOLDS = 4
