@@ -507,3 +507,162 @@ Score: 0.9804
        CV        
 ------------------------------
 Score: 0.9804
+------------------------------
+       Training fold: 0       
+------------------------------
+Training with model: rexnet_150
+------------------------------
+       Training fold: 0       
+------------------------------
+Training with model: rexnet_100
+Epoch: 1, 	avg train loss: 0.2227, 	avg validation loss: 0.0995
+Epoch: 1, 	ROC-AUC score: 0.9590, 	time elapsed: 290.441055059433
+Epoch: 1, 	Save Best Score: 0.9590 Model
+Epoch: 1, 	Save Best Loss: 0.0995 Model
+------------------------------
+       Training fold: 0       
+------------------------------
+Training with model: rexnet_150
+Epoch: 1, 	avg train loss: 0.1800, 	avg validation loss: 0.0885
+Epoch: 1, 	ROC-AUC score: 0.9695, 	time elapsed: 431.1531834602356
+Epoch: 1, 	Save Best Score: 0.9695 Model
+Epoch: 1, 	Save Best Loss: 0.0885 Model
+Epoch: 2, 	avg train loss: 0.1202, 	avg validation loss: 0.0699
+Epoch: 2, 	ROC-AUC score: 0.9776, 	time elapsed: 437.8768572807312
+Epoch: 2, 	Save Best Score: 0.9776 Model
+Epoch: 2, 	Save Best Loss: 0.0699 Model
+Epoch: 3, 	avg train loss: 0.1037, 	avg validation loss: 0.0649
+Epoch: 3, 	ROC-AUC score: 0.9790, 	time elapsed: 438.82695388793945
+Epoch: 3, 	Save Best Score: 0.9790 Model
+Epoch: 3, 	Save Best Loss: 0.0649 Model
+Epoch: 4, 	avg train loss: 0.0956, 	avg validation loss: 0.0603
+Epoch: 4, 	ROC-AUC score: 0.9787, 	time elapsed: 439.17800760269165
+Epoch: 4, 	Save Best Loss: 0.0603 Model
+------------------------------
+       Fold: 0 result        
+------------------------------
+Score: 0.9790
+------------------------------
+       CV        
+------------------------------
+Score: 0.9790
+------------------------------
+       Training fold: 0       
+------------------------------
+Training with model: rexnet_100
+Epoch: 1, 	avg train loss: 0.2435, 	avg validation loss: 0.1185
+Epoch: 1, 	ROC-AUC score: 0.9463, 	time elapsed: 290.62606859207153
+Epoch: 1, 	Save Best Score: 0.9463 Model
+Epoch: 1, 	Save Best Loss: 0.1185 Model
+Epoch: 2, 	avg train loss: 0.1451, 	avg validation loss: 0.0862
+Epoch: 2, 	ROC-AUC score: 0.9682, 	time elapsed: 294.13033723831177
+Epoch: 2, 	Save Best Score: 0.9682 Model
+Epoch: 2, 	Save Best Loss: 0.0862 Model
+Epoch: 3, 	avg train loss: 0.1175, 	avg validation loss: 0.0740
+Epoch: 3, 	ROC-AUC score: 0.9757, 	time elapsed: 294.20729875564575
+Epoch: 3, 	Save Best Score: 0.9757 Model
+Epoch: 3, 	Save Best Loss: 0.0740 Model
+Epoch: 4, 	avg train loss: 0.1063, 	avg validation loss: 0.0704
+Epoch: 4, 	ROC-AUC score: 0.9773, 	time elapsed: 294.3375413417816
+Epoch: 4, 	Save Best Score: 0.9773 Model
+Epoch: 4, 	Save Best Loss: 0.0704 Model
+------------------------------
+       Fold: 0 result        
+------------------------------
+Score: 0.9773
+------------------------------
+       CV        
+------------------------------
+Score: 0.9773
+------------------------------
+       Training fold: 0       
+------------------------------
+Training with model: rexnet_100
+------------------------------
+       Training fold: 0       
+------------------------------
+Training with model: rexnet_100
+------------------------------
+       Training fold: 0       
+------------------------------
+Training with model: rexnet_100
+------------------------------
+       Training fold: 0       
+------------------------------
+Training with model: rexnet_100
+------------------------------
+       Training fold: 0       
+------------------------------
+Training with model: rexnet_100
+------------------------------
+       Training fold: 0       
+------------------------------
+Training with model: rexnet_100
+------------------------------
+       Training fold: 0       
+------------------------------
+Training with model: rexnet_100
+------------------------------
+       Training fold: 0       
+------------------------------
+Training with model: rexnet_100
+------------------------------
+       Training fold: 0       
+------------------------------
+Training with model: rexnet_100
+------------------------------
+       Training fold: 0       
+------------------------------
+Training with model: rexnet_100
+------------------------------
+       Training fold: 0       
+------------------------------
+Training with model: rexnet_100
+------------------------------
+       Training fold: 0       
+------------------------------
+Training with model: rexnet_100
+------------------------------
+       Training fold: 0       
+------------------------------
+Training with model: rexnet_100
+Epoch: 1, 	avg train loss: 0.2868, 	avg validation loss: 0.1602
+Epoch: 1, 	ROC-AUC score: 0.9244, 	time elapsed: 289.26948857307434
+Epoch: 1, 	Save Best Score: 0.9244 Model
+Epoch: 1, 	Save Best Loss: 0.1602 Model
+------------------------------
+       Training fold: 0       
+------------------------------
+Training with model: rexnet_150
+Epoch: 1, 	avg train loss: 0.2549, 	avg validation loss: 0.1152
+Epoch: 1, 	ROC-AUC score: 0.9633, 	time elapsed: 433.95766830444336
+Epoch: 1, 	Save Best Score: 0.9633 Model
+Epoch: 1, 	Save Best Loss: 0.1152 Model
+Epoch: 2, 	avg train loss: 0.2155, 	avg validation loss: 0.1095
+Epoch: 2, 	ROC-AUC score: 0.9699, 	time elapsed: 439.24294781684875
+Epoch: 2, 	Save Best Score: 0.9699 Model
+Epoch: 2, 	Save Best Loss: 0.1095 Model
+Epoch: 3, 	avg train loss: 0.2059, 	avg validation loss: 0.0927
+Epoch: 3, 	ROC-AUC score: 0.9730, 	time elapsed: 439.86478209495544
+Epoch: 3, 	Save Best Score: 0.9730 Model
+Epoch: 3, 	Save Best Loss: 0.0927 Model
+Epoch: 4, 	avg train loss: 0.1932, 	avg validation loss: 0.0841
+Epoch: 4, 	ROC-AUC score: 0.9747, 	time elapsed: 440.10635328292847
+Epoch: 4, 	Save Best Score: 0.9747 Model
+Epoch: 4, 	Save Best Loss: 0.0841 Model
+Epoch: 5, 	avg train loss: 0.1913, 	avg validation loss: 0.0778
+Epoch: 5, 	ROC-AUC score: 0.9762, 	time elapsed: 440.562796831131
+Epoch: 5, 	Save Best Score: 0.9762 Model
+Epoch: 5, 	Save Best Loss: 0.0778 Model
+Epoch: 6, 	avg train loss: 0.1840, 	avg validation loss: 0.0735
+Epoch: 6, 	ROC-AUC score: 0.9787, 	time elapsed: 440.43557572364807
+Epoch: 6, 	Save Best Score: 0.9787 Model
+Epoch: 6, 	Save Best Loss: 0.0735 Model
+------------------------------
+       Fold: 0 result        
+------------------------------
+Score: 0.9787
+------------------------------
+       CV        
+------------------------------
+Score: 0.9787

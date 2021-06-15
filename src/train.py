@@ -125,7 +125,7 @@ def train_loop(df: pd.DataFrame, fold: int, desc: bool = False):
     scheduler = get_lr_scheduler(optimizer, scheduler_name=config.SCHEDULER)
 
     # define the loss function
-    criterion = nn.BCEWithLogitsLoss()
+    loss_func = nn.BCEWithLogitsLoss()
 
     # define variables for ROC and loss
     best_score = 0
@@ -133,7 +133,11 @@ def train_loop(df: pd.DataFrame, fold: int, desc: bool = False):
 
     # instantiate training object
     engine = run.Run(
-        model, device=device, criterion=criterion, optimizer=optimizer
+        model,
+        device=device,
+        criterion=loss_func,
+        optimizer=optimizer,
+        use_mixup=config.use_mixup,
     )
 
     # iterate through all the epochs

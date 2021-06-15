@@ -10,14 +10,14 @@ NUM_WORKERS = 4
 
 # optimizer variables
 LEARNING_RATE = 3e-4
-WEIGHT_DECAY = 5e-5
+WEIGHT_DECAY = 5e-3
 SCHEDULER = "CosineAnnealingLR"
 
 # number of training rounds
-EPOCHS = 4
+EPOCHS = 6
 
 # name of the model
-MODEL_NAME = "efficientnet_b1"
+MODEL_NAME = "rexnet_150"
 # MODEL_NAME = "test_cnn_model"
 
 # number of cross-validation folds
@@ -27,3 +27,7 @@ FOLDS = 4
 MODEL_DIR = "models"
 OUTPUT_DIR = "outputs"
 DATA_DIR = "data"
+
+# mixup augmentations
+use_mixup = True
+mixup_alpha = 1.0

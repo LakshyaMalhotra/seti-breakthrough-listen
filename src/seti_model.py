@@ -10,10 +10,14 @@ class SETIModel(nn.Module):
         self.model = timm.create_model(
             model_name=self.model_name, pretrained=pretrained, in_chans=1
         )
-        self.input_fc = self.model.classifier.in_features
-        self.model.classifier = nn.Linear(
+        self.input_fc = self.model.head.fc.in_features
+        self.model.head.fc = nn.Linear(
             in_features=self.input_fc, out_features=1, bias=True
         )
+        # self.input_fc = self.model.classifier.in_features
+        # self.model.classifier = nn.Linear(
+        #     in_features=self.input_fc, out_features=1, bias=True
+        # )
 
     def forward(self, x):
         return self.model(x)
@@ -32,6 +36,6 @@ if __name__ == "__main__":
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = SETIModel(model_name=config.MODEL_NAME)
     model = model.to(device)
-    x = torch.rand(1, 1, 256, 256)
+    x = torch.rand(16, 1, 256, 256)
     x = x.to(device)
     model_details(model, x)

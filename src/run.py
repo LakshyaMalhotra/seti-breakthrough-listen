@@ -5,7 +5,7 @@ import torch
 import numpy as np
 import torch.nn as nn
 
-import utils
+import utils, config
 
 
 class Run:
@@ -13,13 +13,15 @@ class Run:
         self,
         model,
         device: torch.device,
-        criterion: nn.BCEWithLogitsLoss,
+        criterion: Callable,
         optimizer: torch.optim.Adam,
+        use_mixup: bool,
     ):
         self.model = model
         self.criterion = criterion
         self.optimizer = optimizer
         self.device = device
+        self.use_mixup = use_mixup
 
     def train(
         self,
@@ -49,9 +51,26 @@ class Run:
             labels = labels.to(self.device)
             batch_size = images.size(0)
 
-            # forward pass
-            y_preds = self.model(images)
-            loss = self.criterion(y_preds, labels.unsqueeze(1).type_as(y_preds))
+            if self.use_mixup:
+                mixed_x, y_a, y_b, lam = utils.mixup_data(
+                    images,
+                    labels,
+                    alpha=config.mixup_alpha,
+                    use_cuda=True,
+                )
+
+                # forward pass
+                y_preds = self.model(mixed_x)
+                y_preds = y_preds.squeeze(1)
+                y_a = y_a.type_as(y_preds)
+                y_b = y_b.type_as(y_preds)
+                loss = utils.mixup_criterion(
+                    self.criterion, y_preds, y_a, y_b, lam
+                )
+            else:
+                y_preds = self.model(images)
+                y_preds = y_preds.squeeze(1)
+                loss = self.criterion(y_preds, labels.type_as(y_preds))
 
             # record loss
             losses.update(loss.item(), batch_size)
@@ -105,7 +124,8 @@ class Run:
             with torch.no_grad():
                 y_preds = self.model(images)
 
-            loss = self.criterion(y_preds, labels.unsqueeze(1).type_as(y_preds))
+            y_preds = y_preds.squeeze(1)
+            loss = self.criterion(y_preds, labels.type_as(y_preds))
             losses.update(loss.item(), batch_size)
 
             # record accuracy
