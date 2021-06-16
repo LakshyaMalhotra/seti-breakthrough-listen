@@ -55,7 +55,7 @@ class Run:
                 mixed_x, y_a, y_b, lam = utils.mixup_data(
                     images,
                     labels,
-                    alpha=config.mixup_alpha,
+                    alpha=config.MIXUP_ALPHA,
                     use_cuda=True,
                 )
 

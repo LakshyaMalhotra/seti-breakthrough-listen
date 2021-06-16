@@ -109,7 +109,7 @@ def train_loop(df: pd.DataFrame, fold: int, desc: bool = False):
 
     # print model details
     if desc:
-        x = torch.rand(config.BATCH_SIZE, 1, 256, 256)
+        x = torch.rand(config.BATCH_SIZE, 1, config.SIZE, config.SIZE)
         x = x.to(device)
         seti_model.model_details(model, x)
 
@@ -125,7 +125,7 @@ def train_loop(df: pd.DataFrame, fold: int, desc: bool = False):
     scheduler = get_lr_scheduler(optimizer, scheduler_name=config.SCHEDULER)
 
     # define the loss function
-    loss_func = nn.BCEWithLogitsLoss()
+    criterion = nn.BCEWithLogitsLoss()
 
     # define variables for ROC and loss
     best_score = 0
@@ -135,9 +135,9 @@ def train_loop(df: pd.DataFrame, fold: int, desc: bool = False):
     engine = run.Run(
         model,
         device=device,
-        criterion=loss_func,
+        criterion=criterion,
         optimizer=optimizer,
-        use_mixup=config.use_mixup,
+        use_mixup=config.USE_MIXUP,
     )
 
     # iterate through all the epochs

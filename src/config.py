@@ -3,7 +3,7 @@
 SIZE = 384
 
 # batch size
-BATCH_SIZE = 16
+BATCH_SIZE = 24
 
 # number of processes to be used for pytorch dataloaders
 NUM_WORKERS = 4
@@ -17,7 +17,7 @@ SCHEDULER = "CosineAnnealingLR"
 EPOCHS = 6
 
 # name of the model
-MODEL_NAME = "rexnet_130"
+MODEL_NAME = "efficientnet_b0"
 # MODEL_NAME = "test_cnn_model"
 
 # number of cross-validation folds
@@ -29,5 +29,5 @@ OUTPUT_DIR = "outputs"
 DATA_DIR = "data"
 
 # mixup augmentations
-use_mixup = True
-mixup_alpha = 1.0
+USE_MIXUP = True
+MIXUP_ALPHA = 1.0
