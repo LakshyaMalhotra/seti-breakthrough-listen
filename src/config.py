@@ -1,9 +1,9 @@
 ## Configuration file containing all the important variables
 # size of the image after resizing
-SIZE = 256
+SIZE = 384
 
 # batch size
-BATCH_SIZE = 32
+BATCH_SIZE = 16
 
 # number of processes to be used for pytorch dataloaders
 NUM_WORKERS = 4
@@ -17,7 +17,7 @@ SCHEDULER = "CosineAnnealingLR"
 EPOCHS = 6
 
 # name of the model
-MODEL_NAME = "rexnet_150"
+MODEL_NAME = "rexnet_130"
 # MODEL_NAME = "test_cnn_model"
 
 # number of cross-validation folds

@@ -46,15 +46,6 @@ def get_train_transforms():
     return A.Compose(
         [
             A.Resize(config.SIZE, config.SIZE),
-            A.OneOf([A.GaussNoise(), A.MultiplicativeNoise(p=0.1)], p=0.25),
-            A.OneOf(
-                [
-                    A.OpticalDistortion(p=0.3),
-                    A.GridDistortion(p=0.1),
-                ],
-                p=0.2,
-            ),
-            A.ElasticTransform(p=0.3),
             ToTensorV2(),
         ]
     )

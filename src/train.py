@@ -74,7 +74,7 @@ def train_loop(df: pd.DataFrame, fold: int, desc: bool = False):
     valid_labels = valid_folds["target"].values
 
     # get the image augmentations
-    train_transforms = dataset.get_train_transforms_v2()
+    train_transforms = dataset.get_train_transforms()
     valid_transforms = dataset.get_valid_transforms()
 
     # create training and validation datasets
